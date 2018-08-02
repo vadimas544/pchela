@@ -119,7 +119,7 @@ while ($prop1 = pg_fetch_array($res2, null, PGSQL_ASSOC)) {
 							<tr>
 								<td>Новый E-mail</td>
 								<td>
-									<input name='email' id="email" type='text' maxlength='20' size='20'>
+									<input name='email' id="email" type='text'>
 									<button id="change_email" class="btn-md">Изменить e-mail</button>
 								</td>
 							</tr>

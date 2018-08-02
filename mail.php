@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	require('db.php');
 	$errors = [];
 	if(isset($_POST['submit'])){
@@ -31,10 +31,13 @@
 
 				$to = $email;
 				$from = "vadim123544@gmail.com";
+
 				$subject = "Новый пароль";
-				$subject = '=?windows-1251?B?'.base64_encode($subject).'?=';
-				$headers = "From: $from\r\nReply-To: $from\r\nContent-Type: text/plain; charset = windows-1251\r\n";
+				//$subject = iconv('CP1251', 'UTF-8', $subject);
+				$subject = '=?utf-8?B?'.base64_encode($subject).'?=';
+				$headers = "From: $from\r\nReply-To: $from\r\nContent-Type: text/plain; charset = utf-8\r\n";
 				$message = "Ваш новый пароль: $gen_pass";
+				//$message = iconv('CP1251', 'UTF-8', $message);
 				mail($to, $subject, $message, $headers);
 
 				echo "Новый пароль сгенерирован и отправлен вам на e-mail!<hr />";
