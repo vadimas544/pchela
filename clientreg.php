@@ -168,7 +168,7 @@ if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($data['do_signup'])){
     </p>
     <p>
     <p><strong>Номер телефона</strong></p>
-    <input type="number" name="phone" value="<?php echo @$data['phone']; ?>">
+    <input type="number" name="phone" value="<?php echo @$data['phone']; ?>" placeholder="067*******">
     </p>
     <p>
     <p><strong>Дата народження</strong></p>

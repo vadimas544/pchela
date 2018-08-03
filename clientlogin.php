@@ -16,6 +16,7 @@ if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($data['do_login'])){
         $begin = '0001';
      	//$query ="SELECT code_client FROM pos.barcode_client WHERE barcode='".$data['card']."'";
         $query ="SELECT code_client FROM pos.barcode_client WHERE barcode LIKE '".$begin . $data['card'] ."_'";
+        echo $query;
         $result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
         if(!$result){
             $errors[] = 'Пользователя с такой картой не найдено!';
@@ -29,7 +30,7 @@ if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($data['do_login'])){
     $cod = $code_client[0];
 	    //echo $cod;
     $sql = "SELECT password FROM pos.client WHERE code_client='".$cod."'";
-	    //echo $sql;
+	    echo $sql;
 	    
         $res = pg_query($sql);//or die('Ошибка запроса: ' . pg_last_error());
 	    $pass = pg_fetch_array($res, null,  PGSQL_NUM);
@@ -68,6 +69,6 @@ if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($data['do_login'])){
     <p>
         <button type="submit" name="do_login">Войти</button>
     </p>
-    <a href="mail.php">Забыли пароль?</a>&nbsp
+    <a href="menu_pass.php">Забыли пароль?</a>&nbsp
     <a href="clientreg.php">Регистрация</a>
 </form>

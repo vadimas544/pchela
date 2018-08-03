@@ -49,7 +49,6 @@
 	}
 ?>
 <title>Восстановление пароля</title>
-<h1>Забыли пароль?</h1>
 <form method="post" action="">
 	<p>
 		<label>Ваш e-mail:</label>
@@ -57,5 +56,8 @@
 	</p>
 	<p>
 		<input type="submit" name="submit" value="Восстановить">
+	</p>
+	<p>
+		<a href="clientlogin.php">Перейти в личный кабинет</a>
 	</p>
 </form>
