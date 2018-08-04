@@ -107,4 +107,18 @@ body{
 	color: #000;
 	height: 30px;
 }
-
+/*****************************MEDIAQUERIES**************************/
+@media screen and (min-width: 768px) and (max-width: 992px){
+	/*
+  .menu.row1{
+    /*height: 60px;
+    display: none;
+  }
+  .row2{
+    height: 60px;
+  }
+  */
+  body{
+  	background-color: black;
+  }
+}

@@ -29,39 +29,39 @@ $barcode = pg_fetch_array($res, null, PGSQL_ASSOC);
 <div class="container">
 	<div class="cabinet">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-6 col-md-6">
 					<div class="menu">
 						<div class="row text-left">
-							<div class="col-lg-3">
+							<div class="col-lg-3 col-md-3">
 								<span>Личный кабинет</span>
 							</div>
-							<div class="col-lg-3">
+							<div class="col-lg-3 col-md-3">
 								<i class="fa fa-lock"></i> 	
 							</div>
 						</div>
 						<br>
 						<div class="row1">
 							<div class="row">
-								<div class="col-lg-6">
+								<div class="col-lg-6 col-md-6 col-sm-3 col-xs-3">
 									<div class="text-left">
 										<h2>Личные данные</h2>
 									</div>
 								</div>
-								<div class="col-lg-6">
+								<div class="col-lg-6 col-md-6 col-sm-3 col-xs-3">
 									<div class="text-center align-middle">
-										<button id="personal_data" class="btn-md">Просмотр</button>
+										<button id="personal_data" class="btn-md" class="inline">Просмотр</button>
 									</div>	
 								</div>
 							</div>
 						</div>
 						<div class="row2">
 							<div class="row">
-								<div class="col-lg-6">
+								<div class="col-lg-6 col-md-6 col-sm-3 col-xs-3">
 									<div class="text-left">
 										<h2>Бонусный счет</h2>
 									</div>
 								</div>
-								<div class="col-lg-6">
+								<div class="col-lg-6 col-md-6 col-sm-3 col-xs-3">
 									<div class="text-center align-middle">
 										<button id="bonus" class="btn-md">Просмотр</button>
 									</div>	
@@ -70,7 +70,7 @@ $barcode = pg_fetch_array($res, null, PGSQL_ASSOC);
 						</div>
 					</div>	
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-6 col-md-6">
 					<div class="row logout">
 						<div class="text-right">
 							<a href="logout.php" class="btn btn-default" role="button">Выйти</a>
