@@ -100,7 +100,7 @@ while ($prop1 = pg_fetch_array($res2, null, PGSQL_ASSOC)) {
 							<tr>
 								<td>Новый номер телефона</td>
 								<td>
-									<input name='phone' id="phone" type='text' maxlength='20' size='20'>
+									<input name='phone' id="phone" type='text' maxlength='20' size='20' placeholder="38067*******">
 									<button id="change_phone" class="btn-md">Изменить телефон</button>
 								</td>
 							</tr>

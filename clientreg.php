@@ -26,6 +26,10 @@ if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($data['do_signup'])){
     {
         $errors[] = 'Введите номер телефона!';
     }
+    $pos = strstr($data['phone'], '8', true);
+    if($pos != '3'){
+        $errors[] = 'Неправильный формат номера, нужно 380*********!';
+    }
     if(htmlspecialchars(trim($data['birthday'])) == '' )
     {
         $errors[] = 'Введите дату рождения!';
@@ -168,7 +172,7 @@ if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($data['do_signup'])){
     </p>
     <p>
     <p><strong>Номер телефона</strong></p>
-    <input type="number" name="phone" value="<?php echo @$data['phone']; ?>" placeholder="067*******">
+    <input type="text" name="phone" value="<?php echo @$data['phone']; ?>" placeholder="38067*******">
     </p>
     <p>
     <p><strong>Дата народження</strong></p>

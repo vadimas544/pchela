@@ -8,7 +8,10 @@ if(isset($_POST['submit'])){
 	    {
 	        $errors[]='Введите телефон!';
 	    }
-
+	    $pos = strstr($_POST['phone'], '8', true);
+	    if($pos != '3'){
+	        $errors[] = 'Неправильный формат номера, нужно 380*********!';
+	    }
 	    $phone = htmlspecialchars(trim($_POST['phone']));
 		$sql = "SELECT code_client FROM pos.client_property WHERE code_property = '2' AND value_property='".$phone."'";
 		$result = pg_query($sql) or die('Ошибка запроса: ' . pg_last_error());
@@ -33,7 +36,7 @@ if(isset($_POST['submit'])){
 				$text = "Ваш новый пароль: $gen_pass";
 				$password1 = password_hash($gen_pass,  PASSWORD_DEFAULT);
 				$sql1 = "UPDATE pos.client SET password='$password1'  WHERE code_client=$cod";
-				echo $sql1;
+				//echo $sql1;
 				pg_query($dbconn, $sql1);
 				$number = $phone;
 
@@ -92,7 +95,7 @@ if(isset($_POST['submit'])){
 <form method="post" action="">
 	<p>
 		<label>Ваш номер телефона:</label>
-		<input type="text" name="phone" placeholder="067*******" />
+		<input type="text" name="phone" placeholder="38067*******" />
 	</p>
 	<p>
 		<input type="submit" name="submit" value="Восстановить">
